@@ -28,13 +28,13 @@ module.exports = function check(str, bracketsConfig) {
         } else {
           stack.push(char);
         }
-      }
-    } else {
-      if (stack.length === 0) return false;
+      } else {
+        if (stack.length === 0) return false;
 
-      const lastIn = stack.pop();
-      if (bracketPairs[lastIn] !== char) {
-        return false;
+        const lastIn = stack.pop();
+        if (bracketPairs[lastIn] !== char) {
+          return false;
+        }
       }
     }
   }
